@@ -57,7 +57,8 @@ const config = {
     ],
   ],
 
-  themes: ['docusaurus-theme-search-typesense'],
+  //themes: ['docusaurus-theme-search-typesense'],
+  //themes: ['@docusaurus/theme-search-algolia'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -76,7 +77,7 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/changelog', label: 'Changelog', position: 'left'},
+          { to: '/changelog', label: 'Changelog', position: 'left' },
           {
             href: 'https://reviewpad.com/blog/',
             label: 'Blog',
@@ -89,7 +90,7 @@ const config = {
           },
           {
             type: 'docsVersionDropdown',
-            position:'right',
+            position: 'right',
           },
           {
             href: 'https://github.com/reviewpad/',
@@ -98,6 +99,7 @@ const config = {
           },
         ],
       },
+      /*
       typesense: {
         typesenseCollectionName: 'reviewpad', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
       
@@ -112,6 +114,30 @@ const config = {
           apiKey: 'FFR0wUwQ3laHdPMf0cdY9VNJVI9nEl5L',
         },
         contextualSearch: true,
+      },
+      */
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'U3TSN8RPIZ',
+
+        // Public API key: it is safe to commit it
+        apiKey: '697bf1398169fbf5dc37592b2ed6a715',
+
+        indexName: 'maester',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+
+        // Optional: Algolia search parameters
+        searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+
+        //... other Algolia params
       },
       docs: {
         sidebar: {
