@@ -503,6 +503,34 @@ A `reviewpad.yml` example:
 
 <CodeBlock language="yml">{Built_ins.HasFilePattern}</CodeBlock>
 
+### hasGitConflicts
+
+***
+
+**Description**:
+
+Determines if the pull request has Git conflicts, returning `true` or `false` as appropriate.
+
+**Parameters**:
+
+_none_
+
+**Return value**:
+
+`boolean`
+
+Returns `true` if the pull request has Git conflicts, `false` otherwise.
+
+**Examples**:
+
+```yml
+$hasGitConflicts()
+```
+
+A `reviewpad.yml` example:
+
+<CodeBlock language="yml">{Built_ins.HasGitConflicts}</CodeBlock>
+
 ### hasLinearHistory
 
 ***

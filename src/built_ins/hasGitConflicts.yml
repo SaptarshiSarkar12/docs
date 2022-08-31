@@ -1,0 +1,12 @@
+labels:
+  has-conflicts:
+    description: Pull request with Git conflicts
+    color: "ff0000"
+
+workflows:
+  - name: find-git-conflicts
+    description: Check for git conflicts
+    if:
+      - rule: '$hasGitConflicts()'
+    then:
+      - '$addLabel("has-conflicts")'
