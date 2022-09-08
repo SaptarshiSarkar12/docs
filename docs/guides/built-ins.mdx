@@ -839,7 +839,9 @@ A `reviewpad.yml` example:
 
 **Description**:
 
-Returns the total amount of changed lines in the patch.
+Returns the total amount of changed lines in the patch excluding files that match the given patterns.
+
+By default, if no parameter is provided, it will perform a count on all changed files.
 
 Any added or removed line is considered a change. For instance, the following patch will have a `size` of 2 (one line removed and one line added.)
 
@@ -852,7 +854,10 @@ function helloWorld() {
 
 **Parameters**:
 
-_none_
+| variable                      | type     | description                            |
+| ----------------------------- | -------- | -------------------------------------- |
+| `excludedPatterns` (optional) | []string | file patterns to exclude from count    |
+
 
 **Return value**:
 
